@@ -1,0 +1,142 @@
+@use './app/variables';
+
+.button {
+  @include variables.flex-center;
+  width: 203px;
+  height: 43px;
+  padding: 15px 20px;
+  text-wrap: nowrap;
+  border-radius: 25px;
+  border: 1px solid variables.$color-blue;
+  background: variables.$color-blue;
+  color: variables.$color-white;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-left: 40px;
+  overflow: hidden;
+  transition: variables.$transition;
+
+  .spanContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 13px;
+    overflow-y: clip;
+
+    span {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.91px;
+      position: absolute;
+      transition: variables.$transition;
+
+  
+      &:nth-child(1) {
+        transform: translateY(0%);
+      }
+  
+      &:nth-child(2) {
+        transform: translateY(200%);
+      }
+
+   
+    }
+  
+  }
+
+  &:hover {
+    span {
+      &:nth-child(1) {
+        transform: translateY(-200%);
+      }
+  
+      &:nth-child(2) {
+        transform: translateY(0%);
+      }
+    }
+  }
+ 
+  &.arrowDown {
+    &::after {
+      content: '';
+      display: block;
+      margin-left: 10px;
+      background-image: url('../../../../public/chevron-down.svg');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      min-width: 12px;
+      min-height: 13px;
+      max-width: 12px;
+      max-height: 13px;
+    }
+  }
+}
+
+// Брейкпоинты
+
+@include variables.for-big-desktop-1769 {
+  .button {
+    width:  240px;
+    height: 51px;
+    padding: 18px 24px;
+    margin-left: 43px;
+    .spanContainer {
+      span {
+        font-size: 15px;
+      }
+     }
+    
+
+    &.arrowDown {
+      &::after {
+        margin-left: 12px;
+      }
+    }
+  }
+}
+
+@include variables.for-tablet-landscape-1024 {
+  .button {
+    margin-left: 25px;
+    width:  192px;
+    height: 43px;
+    .spanContainer {
+      span {
+        font-size: 12px;
+      }
+     }
+    
+    &.arrowDown {
+      &::after {
+        margin-left: 12px;
+      }
+    }
+  }
+}
+
+@include variables.for-tablet-portait-768{
+  .button {
+    margin-left: auto;
+    order: 3;
+    width:  188px;
+    height: 43px;
+    padding: 15px 18px;
+
+    .spanContainer {
+      span {
+        font-size: 12px;
+      }
+     }
+    
+  }
+}
+
+
+@include variables.for-phone-320 {
+  .button {
+   display: none;
+  }
+}

@@ -1,0 +1,122 @@
+@use './app/variables';
+
+.call {
+    color: variables.$color-blue;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.05px;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 134px;
+    text-wrap: nowrap;
+
+    .spanContainer {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+      height: 13px;
+      overflow-y: clip;
+  
+      span {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.91px;
+        position: absolute;
+        transition: variables.$transition;
+  
+    
+        &:nth-child(1) {
+          transform: translateY(0%);
+        }
+    
+        &:nth-child(2) {
+          transform: translateY(200%);
+        }
+  
+     
+      }
+    
+    }
+  
+    &:hover {
+      span {
+        &:nth-child(1) {
+          transform: translateY(-200%);
+        }
+    
+        &:nth-child(2) {
+          transform: translateY(0%);
+        }
+      }
+    }
+  }
+
+@include variables.for-big-desktop-1769 {
+  .call {
+    font-size: 15px;
+    width: 155px;
+  }
+}
+
+@include variables.for-tablet-landscape-1024 {
+  .call {
+    font-size: 12px;
+    width: 124px;
+  }
+}
+  
+@include variables.for-tablet-portait-768 {
+  .call {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 43px;
+    height: 43px;
+    order: 2;
+    margin-left: 62px;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      background-image: url('../../../public/callIcon.svg');
+      background-size:contain;
+      border-radius: 50%;
+      width: 43px;
+      height: 43px;
+    }
+
+    span {
+      display: none;
+    }
+  }
+}
+  
+@include variables.for-phone-320 {
+  .call {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 41px;
+    height: 41px;
+    order: 2;
+    margin-left: auto;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      background-image: url('../../../public/callIcon.svg');
+      background-size:contain;
+      border-radius: 50%;
+      width: 41px;
+      height: 41px;
+    }
+
+    span {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,152 @@
+@use './app/variables';
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 454px;
+    width: 100%;
+    margin-top: 50px;
+
+    .policy {
+        margin-top: 50px;
+        color: #000;
+        text-align: center;
+        font-size: 12px;
+        line-height: 140%; 
+        opacity: 0.5;
+
+        a {
+            color: #000;
+            text-decoration-line: underline;
+        }
+    }
+
+    .formButton {
+        margin-left: 0;
+        margin-top: 30px;
+        padding: 24px 69px;
+        font-size: 14px;
+        width: 228px;
+        height: 62px;
+        border-radius: 50px;
+
+
+        .spanContainer {
+            span {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+
+@include variables.for-big-desktop-1769 {
+    .form {
+        max-width: 587px;
+    
+        .policy {
+            font-size: 14px;
+        }
+    
+        .formButton {
+            margin-left: 0;
+            margin-top: 30px;
+            padding: 24px 69px;
+            font-size: 14px;
+            width: 234px;
+            height: 63px;
+            border-radius: 50px;
+
+            .spanContainer {
+                span {
+                    font-size: 14px;
+                }
+            }
+            
+        }
+    }
+}
+
+
+@include variables.for-tablet-landscape-1024 {
+    .form {
+        max-width: 370px;
+    
+        .policy {
+            font-size: 11px;
+        }
+    
+        .formButton {
+            margin-left: 0;
+            margin-top: 30px;
+            padding: 20px 40px;
+            font-size: 14px;
+            width: 234px;
+            height: 63px;
+            border-radius: 50px;
+
+            .spanContainer {
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+
+@include variables.for-tablet-portait-768 {
+    .form {
+        max-width: 438px;
+    
+        .policy {
+            font-size: 11px;
+        }
+    
+        .formButton {
+            margin-left: 0;
+            margin-top: 30px;
+            padding: 20px 40px;
+            font-size: 14px;
+            width: 170px;
+            height: 54px;
+            border-radius: 50px;
+
+            .spanContainer {
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@include variables.for-phone-320 {
+    .form {
+        max-width: 320px;
+        margin-top: 30px;
+        .policy {
+            font-size: 12px;
+            margin-top: 40px;
+        }
+    
+        .formButton {
+            margin-left: 0;
+            margin-top: 20px;
+            padding: 18px 50px;
+            font-size: 11px;
+            width: 170px;
+            height: 47px;
+            border-radius: 50px;
+            display: flex;
+
+            .spanContainer {
+                span {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}

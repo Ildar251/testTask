@@ -1,0 +1,61 @@
+@use './app/variables';
+
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: variables.$color-white;
+  z-index: 10;
+  padding: 30px 0px;
+
+  .container {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .logo {
+      @include variables.flex-center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 155px;
+      max-height: 25px;
+    }
+  }
+}
+
+
+
+@include variables.for-big-desktop-1769 {
+  .header {
+    padding: 40px 0px;
+
+    .container {
+      .logo {
+        max-width: unset;
+        max-height: unset;
+      }
+    }
+  }
+}
+
+
+@include variables.for-tablet-portait-768 {
+  .header {
+    padding: 40px 0px;
+  }
+}
+
+@include variables.for-phone-320 {
+  .header {
+    padding: 20px 0px;
+  
+    .container {
+      .logo {
+        max-width: 130px;
+        max-height: 21px;
+      }
+    }
+  }
+
+}

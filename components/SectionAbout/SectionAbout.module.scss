@@ -1,0 +1,279 @@
+@use './app/variables';
+
+.sectionAbout {
+    padding: 110px 0;
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        h2 {
+            color: variables.$color-blue;
+            text-align: right;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .contentImage {
+            .image {
+                position: relative;
+                width: 567px;
+                height: 720px;
+
+                img {
+                    object-fit: cover;
+                    object-position: center;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .ellipsSvg {
+                    fill: variables.$color-blue;
+                    position: absolute;
+                    top: 90px;
+                    right: -100px;
+                    z-index: 2;
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+        }
+
+        .contentText {
+            padding: min(74px, 3.5vw) min(139px, 6.5vw) 0 min(300px, 14vw);
+            flex: 1;
+
+            &::before {
+                content: '';
+                display: block;
+                width: 63px;
+                height: 12px;
+                background-color: variables.$color-blue;
+                margin-bottom: 50px;
+            }
+
+            .mainText {
+                color: variables.$color-black;
+                font-size: 26px;
+                line-height: 140%;
+                text-transform: uppercase;
+
+                span {
+                    display: block;
+                    color: variables.$color-blue;
+                }
+            }
+
+            .secondText {
+                padding-top: 100px;
+                color: variables.$color-black;
+                font-size: 16px;
+                line-height: 160%;
+                text-transform: uppercase;
+
+                span {
+                    display: block;
+                    color: variables.$color-blue;
+                }
+            }
+
+
+        }
+    }
+}
+
+
+
+@include variables.for-big-desktop-1769 {
+    .sectionAbout {
+        padding: 150px 0;
+
+        .content {
+
+            h2 {
+                font-size: 17px;
+                margin-bottom: 33px;
+            }
+
+            .contentImage {
+                .image {
+                    width: 733px;
+                    height: 900px;
+
+                    .ellipsSvg {
+                        top: 115px;
+                        right: -129.5px;
+                    }
+                }
+            }
+
+            .contentText {
+                &::before {
+                    width: 63px;
+                    height: 12px;
+                    margin-bottom: 65px;
+                }
+
+                .mainText {
+                    font-size: 34px;
+                }
+
+                .secondText {
+                    padding-top: 120px;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+}
+
+@include variables.for-tablet-landscape-1024 {
+    .sectionAbout {
+        padding: 120px 0;
+
+        .content {
+
+            h2 {
+                font-size: 11px;
+                margin-bottom: 20px;
+            }
+
+            .contentImage {
+                .image {
+                    width: 408px;
+                    height: 514px;
+
+                    .ellipsSvg {
+                        top: 60px;
+                        right: -74px;
+                        width: 148px;
+                        height: 148px;
+                    }
+                }
+            }
+
+            .contentText {
+               
+                &::before {
+                    width: 35px;
+                    height: 6px;
+                    margin-bottom: 35px;
+                }
+
+                .mainText {
+                    font-size: 19px;
+                }
+
+                .secondText {
+                    padding-top: 65px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+
+@include variables.for-tablet-portait-768 {
+    .sectionAbout {
+        padding: 90px 0;
+
+        .content {
+
+            h2 {
+                font-size: 11px;
+                margin-bottom: 20px;
+            }
+
+            .contentImage {
+                margin-left: -40px;
+                .image {
+                    width: 290px;
+                    height: 480px;
+
+                    .ellipsSvg {
+                        top: 60px;
+                        right: -40px;
+                        width: 80px;
+                        height: 80px;
+                    }
+                }
+            }
+
+            .contentText {
+                padding: min(35px, 2.5vw) min(10px, 3.5vw) 0 min(94px, 12vw);
+                &::before {
+                    width: 35px;
+                    height: 6px;
+                    margin-bottom: 35px;
+                }
+
+                .mainText {
+                    font-size: 19px;
+                }
+
+                .secondText {
+                    padding-top: 65px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+@include variables.for-phone-320 {
+    .sectionAbout {
+        padding: 55px 0;
+
+        .content {
+            flex-direction: column;
+            align-items: flex-start;
+
+            h2 {
+                font-size: 11px;
+                margin-bottom: 10px;
+                margin-right: 45px;
+            }
+
+            .contentImage {
+                margin-left: -20px;
+                .image {
+                    width: calc(100% - 45px);
+                    height: 403px;
+
+                    .ellipsSvg {
+                        top: 60px;
+                        right: -43px;
+                        width: 86px;
+                        height: 86px;
+                    }
+                }
+            }
+
+            .contentText {
+                padding: 55px 0 0;
+                &::before {
+                    width: 35px;
+                    height: 6px;
+                    margin-bottom: 30px;
+                }
+
+                .mainText {
+                    font-size: 16px;
+                }
+
+                .secondText {
+                    padding-top: 40px;
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,148 @@
+@use './app/variables';
+
+.menu {
+  z-index: 5;
+  .menuContainer {
+    display: flex;
+
+    .menuText {
+      color: #111;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.05px;
+      text-transform: uppercase;
+      margin-left: 12px;
+
+      @include variables.for-big-desktop-1769 {
+        font-size: 15px;
+        margin-left: 15px;
+      }
+
+      @include variables.for-tablet-landscape-1024 {
+        margin-left: 10px;
+      }
+
+
+      @include variables.for-phone-320{
+        display: none;
+      }
+    }
+
+    .menuItems {
+      display: flex;
+      flex-direction: column;
+      transform: translate(-150vw);
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: 500px;
+      position: absolute;
+      transition: variables.$transition;
+      border-right: 10px solid variables.$color-blue;
+      background-color: variables.$color-white;
+      top: 0px;
+      left: 0px;
+      padding: 100px 20px 20px 20px;
+      height: 100svh;
+
+      li {
+        &:not(:first-of-type) {
+          margin-top: 10px;
+        }
+
+        a {
+          font-size: 32px;
+          color: variables.$color-blue;
+        }
+      }
+
+      .number {
+        margin: 20px 0 0;
+
+        a {
+          font-size: 32px;
+          color: variables.$color-blue;
+        }
+      }
+    }
+
+    .checkbox {
+      display: block;
+      height: 14px;
+      width: 32px;
+      z-index: 5;
+      opacity: 0;
+      cursor: pointer;
+      transition: variables.$transition;
+
+      @include variables.for-big-desktop-1769 {
+        height: 16px;
+        width: 38px;
+      }
+
+      @include variables.for-phone-320{
+        height: 14px;
+        width: 29px;
+      }
+
+      &:checked~.menuItems {
+        transform: translateX(0);
+      }
+
+
+      &:checked~.menuLines .line:nth-child(1) {
+        transform: rotate(45deg);
+        width: 21px;
+      }
+
+      &:checked~.menuLines .line:nth-child(2) {
+        transform: scale(0);
+      }
+
+      &:checked~.menuLines .line:nth-child(3) {
+        transform: rotate(-45deg);
+        width: 21px;
+      }
+    }
+
+    .menuLines {
+      position: absolute;
+      z-index: 2;
+      @include variables.flex;
+      flex-direction: column;
+      transition: variables.$transition;
+
+      .line {
+        display: block;
+        height: 2px;
+        width: 32px;
+        background: variables.$color-blue;
+
+        @include variables.for-big-desktop-1769 {
+          width: 38px;
+        }
+
+        @include variables.for-phone-320{
+          width: 29px;
+          background: variables.$color-black;
+        }
+
+        &:nth-child(1) {
+          transform-origin: 0% 0%;
+          transition: variables.$transition;
+        }
+
+        &:nth-child(2) {
+          transition: variables.$transition;
+          margin: 5px 0;
+        }
+
+        &:nth-child(3) {
+          transform-origin: 0% 100%;
+          transition: variables.$transition;
+        }
+      }
+    }
+
+  }
+}
